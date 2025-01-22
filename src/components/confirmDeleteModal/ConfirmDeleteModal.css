@@ -1,0 +1,89 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-overlay h2 {
+  font-size: 1.6rem;
+}
+
+.modal-content {
+  background: #2d2c36;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  width: 50%;
+  height: 18rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.confirm-button {
+  background: #f04;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0;
+  font-family: Inter;
+  font-size: 1.1rem;
+  text-align: right;
+  color: #f4f4f4;
+  line-height: 32.68px;
+}
+
+.cancel-button {
+  background: #5c5c5c;
+  color: #ccc;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0;
+  font-family: Inter;
+  font-size: 1.1rem;
+  text-align: right;
+  line-height: 32.68px;
+}
+
+@media (max-width: 500px) {
+  .modal-content {
+    height: 11rem;
+  }
+  .modal-overlay h2 {
+    font-size: 1.2rem;
+  }
+
+  .confirm-button {
+    padding: 5px 16px;
+    font-size: 0.9rem;
+  }
+  .cancel-button {
+    padding: 5px 16px;
+    font-size: 0.9rem;
+  }
+
+  .modal-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+    width: 100%;
+  }
+}

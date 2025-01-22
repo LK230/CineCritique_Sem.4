@@ -1,0 +1,86 @@
+.Home {
+  padding: 30px;
+}
+
+.Home .img-view-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.Home .backdrop-container {
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  gap: 10px;
+  width: 80rem;
+}
+
+.Home .random-movie {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+
+.Home .random-movie img {
+  width: 80%; /* Bild nimmt nun 90% der Containerbreite ein */
+  height: auto; /* Höhe wird automatisch angepasst, um das Seitenverhältnis zu wahren */
+  object-fit: cover; /* Bild wird zugeschnitten, um den gesamten Container zu füllen */
+  object-position: center; /* Zentriert das Bild innerhalb des Containers */
+  border-radius: 25px;
+  box-shadow: 0px 2px 10px 0px #353540;
+  margin-left: 10%; /* Abstand links */
+  margin-right: 5%; /* Abstand rechts */
+}
+
+
+
+.Home h2 {
+  color: #fff;
+
+  font-family: Inter;
+  font-size: 28px;
+  font-style: normal;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  line-height: normal;
+  text-align: center;
+}
+.Home h2 span {
+  color: #f00;
+  font-family: Inter;
+  font-size: 28px;
+  font-style: normal;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.Home .backdrop-container::-webkit-scrollbar {
+  display: none;
+}
+
+.Home .backdrop-card {
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+}
+
+.Home .arrow {
+  margin: 10px;
+  background: none;
+  border: none;
+  height: 45px;
+  cursor: pointer;
+}
+
+@media (max-width: 500px) {
+  .Home {
+    padding: 50px 30px;
+  }
+  .Home .arrow {
+    display: none;
+  }
+}

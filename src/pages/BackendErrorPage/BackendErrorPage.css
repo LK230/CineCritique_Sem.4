@@ -1,0 +1,18 @@
+.backend-error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f8d7da;
+  color: #721c24;
+  text-align: center;
+}
+
+.backend-error-container h1 {
+  font-size: 2rem;
+}
+
+.backend-error-container p {
+  font-size: 1.2rem;
+}

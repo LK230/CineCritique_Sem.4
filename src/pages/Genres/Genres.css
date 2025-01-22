@@ -1,0 +1,67 @@
+.Genres {
+  padding: 30px;
+}
+
+.Genres .img-view-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.Genres .backdrop-container {
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  gap: 10px;
+  width: 80rem;
+}
+
+.Genres h2 {
+  color: #fff;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.Genres h2 span {
+  color: #f00;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.Genres .backdrop-container::-webkit-scrollbar {
+  display: none;
+}
+
+.Genres .backdrop-card {
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+}
+
+.Genres .arrow {
+  margin: 10px;
+  background: none;
+  border: none;
+  height: 45px;
+  cursor: pointer;
+}
+
+.Genres .arrow-margin {
+  margin: 37px;
+}
+
+@media (max-width: 500px) {
+  .Genres .arrow {
+    display: none;
+  }
+  .Genres .arrow-margin {
+    margin: 0;
+  }
+}

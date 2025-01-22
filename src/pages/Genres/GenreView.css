@@ -1,0 +1,36 @@
+.GenreView {
+    padding: 30px;
+    overflow-x: hidden;
+  }
+
+.GenreView h2 {
+    color: #fff;
+    font-family: Inter;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+.GenreView h2 span {
+    color: #f00;
+    font-family: Inter;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  .GenreView .backdrop-container {
+    display: flex;
+    flex-wrap: wrap;
+    
+  }
+  
+  .GenreView .Card {
+    background-color: #222;
+    color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+  }

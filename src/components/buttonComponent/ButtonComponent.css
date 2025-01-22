@@ -1,0 +1,33 @@
+.ButtonComponentContainer button {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+.ButtonComponentContainer .ButtonComponent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ButtonComponentContainer button:disabled p,
+.ButtonComponentContainer button:disabled img {
+  color: #767676;
+  cursor: no-drop;
+}
+
+.ButtonComponentContainer button p {
+  margin: 0;
+  width: 128px;
+  left: 10px;
+  font-family: Inter;
+  font-size: 1.3rem;
+  text-align: right;
+  color: #f4f4f4;
+  line-height: 32.68px;
+}
+
+.ButtonComponentContainer button img {
+  margin-left: 5px;
+  width: 50px;
+  height: 50px;
+}

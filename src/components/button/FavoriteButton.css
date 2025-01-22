@@ -1,0 +1,13 @@
+.FavoriteButtonContainer {
+}
+
+.FavoriteButtonContainer button {
+  border: none;
+  background: none;
+  padding: auto;
+  cursor: pointer;
+}
+
+.FavoriteButtonContainer img {
+  width: 35px;
+}

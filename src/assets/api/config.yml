@@ -1,0 +1,163 @@
+
+################## Docker-Compose #####################################
+services:
+    keycloak:
+      image: quay.io/keycloak/keycloak:latest
+      container_name: keycloak
+      command: start
+      environment:
+        - KC_PROXY=edge
+        - KC_HOSTNAME=https://cinecritique.mi.hdm-stuttgart.de
+        - KC_HOSTNAME_STRICT=true
+#        - KC_HOSTNAME_PATH=/auth
+      ports:
+        - "8080:8080"
+      volumes:
+        - keycloak_data:/opt/keycloak/data
+      networks:
+        - default
+      labels:
+        - "com.centurylinklabs.watchtower.enable=false"
+    nginx:
+      image: nginx:latest
+      container_name: nginx
+      volumes:
+        - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+        - ./certbot/conf:/etc/letsencrypt
+        - ./certbot/www:/var/www/certbot
+      ports:
+        - "80:80"
+        - "443:443"
+      depends_on:
+        - keycloak
+      networks:
+        - default
+      labels:
+        - "com.centurylinklabs.watchtower.enable=false"
+    certbot:
+      image: certbot/certbot
+      container_name: certbot
+      volumes:
+        - ./certbot/conf:/etc/letsencrypt
+        - ./certbot/www:/var/www/certbot
+      command: certonly --webroot --webroot-path=/var/www/certbot --email jf136@hdm-stuttgart.de --agree-tos --no-eff-email -d cinecritique.mi.hdm-stuttgart.de
+      networks:
+        - default
+      labels:
+        - "com.centurylinklabs.watchtower.enable=false"
+    mongodb:
+      image: mongo:4.4
+      container_name: mongodb
+      environment:
+        MONGO_INITDB_ROOT_USERNAME: admin
+        MONGO_INITDB_ROOT_PASSWORD: admin
+      volumes:
+      - ./data:/data/db
+      ports:
+        - "27017:27017"
+      networks:
+        - default
+      labels:
+        - "com.centurylinklabs.watchtower.enable=false"
+    springbackend:
+      image: registry.mi.hdm-stuttgart.de/jf136/cinecritique-backend:latest
+      container_name: springbackend
+      platform: linux/amd64
+      ports:
+        - "8082:8082"
+      networks:
+        - default
+      labels:
+        - "com.centurylinklabs.watchtower.enable=true"
+    watchtower:
+      image: containrrr/watchtower
+      container_name: watchtower
+      environment:
+        - DOCKER_CONFIG=/root/.docker
+      volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
+        - /root/.docker:/root/.docker
+      command: --cleanup --interval 30 --label-enable
+    aibackend:
+      image: registry.mi.hdm-stuttgart.de/es152/cinecritique-ai-recommendations:latest
+      container_name: aibackend
+      platform: linux/amd64
+      ports:
+        - "8000:8000"
+      networks:
+        - default
+      labels:
+        - "com.centurylinklabs.watchtower.enable=true"
+    frontend:
+      image: registry.mi.hdm-stuttgart.de/es152/cinecritique-frontend:latest
+      container_name: frontend
+      platform: linux/amd64
+      ports:
+        - "3000:3000"
+      networks:
+        - default
+      labels:
+        - "com.centurylinklabs.watchtower.enable=true"
+volumes:
+  keycloak_data:
+    driver: local
+networks:
+  default:
+    driver: bridge
+
+#################################### Nginx Config #########################################
+events { }
+
+http {
+
+    server {
+        listen 80;
+        server_name cinecritique.mi.hdm-stuttgart.de;
+
+        # Certbot validation
+        location /.well-known/acme-challenge/ {
+            root /var/www/certbot;
+        }
+
+        location / {
+            return 301 https://cinecritique.mi.hdm-stuttgart.de:8443$request_uri;
+        }
+    }
+
+    server {
+        listen 443 ssl;
+        server_name cinecritique.mi.hdm-stuttgart.de;
+
+        # SSL Certificates
+        ssl_certificate /etc/letsencrypt/live/cinecritique.mi.hdm-stuttgart.de/fullchain.pem;
+        ssl_certificate_key /etc/letsencrypt/live/cinecritique.mi.hdm-stuttgart.de/privkey.pem;
+
+        # Frontend
+        location / {
+            proxy_pass http://frontend:3000;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+        }
+	
+	# Backend
+	location /api/ {
+	    proxy_pass http://springbackend:8082;
+	    proxy_set_header Host $host;
+	    proxy_set_header X-Real-IP $remote_addr;
+	    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+	    proxy_set_header X-Forwarded-Proto $scheme;
+	}
+
+        # Keycloak Auth
+        location /auth/ {
+           proxy_pass http://keycloak:8080/auth/;
+           proxy_set_header Host $host;
+           proxy_set_header X-Real-IP $remote_addr;
+           proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+           proxy_set_header X-Forwarded-Proto $scheme;
+        }
+    }
+}
+

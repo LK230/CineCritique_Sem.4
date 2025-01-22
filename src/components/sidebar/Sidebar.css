@@ -1,0 +1,137 @@
+.Sidebar {
+  background: #0d1015;
+
+  color: #d0d0d0;
+  transition: width 0.2s ease;
+  position: fixed;
+  float: left;
+}
+
+.Sidebar.open {
+  width: 270px;
+  height: 100vh;
+}
+
+.Sidebar.close {
+  height: 100%;
+  width: 90px;
+  min-width: 80px;
+}
+
+.Sidebar.open .sidebar-container {
+  padding: 45px 0 0 50px;
+}
+
+.Sidebar.close .sidebar-container {
+  padding: 45px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Sidebar .items-container {
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.Sidebar ul {
+  list-style: none;
+  margin: 40px 0;
+}
+
+.Sidebar.open ul {
+  padding: 0 15px;
+}
+
+.Sidebar.close ul {
+  padding: 0;
+}
+.Sidebar ul li {
+  margin: 26px 0 0 0;
+  display: flex;
+  align-items: center;
+}
+
+.Sidebar ul li.active::before {
+  content: "";
+  display: flex;
+  width: 6px;
+  height: 26px;
+  flex-shrink: 0;
+  border-radius: 0px 4px 4px 0px;
+  background: #f00;
+  box-shadow: 0px 0px 7px 7px #f00;
+  position: absolute;
+  left: 0;
+}
+
+.Sidebar ul div {
+  display: flex;
+  align-items: center;
+  height: 42px;
+}
+
+.Sidebar ul div svg {
+  width: 28px;
+  height: 28px;
+}
+
+.Sidebar .link-btn {
+  list-style: none;
+  color: #d0d0d0;
+  text-decoration: none;
+}
+
+.Sidebar.open .link-btn {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.Sidebar.open .link-btn p {
+  margin-left: 25px;
+}
+
+.Sidebar.close .link-btn {
+  margin-left: 0;
+}
+
+.Sidebar.open .open-close-btn {
+  position: absolute;
+  top: 94vh;
+  left: 237px;
+}
+
+.Sidebar.close .open-close-btn {
+  position: absolute;
+  top: 93vh;
+  left: 64px;
+}
+
+.Sidebar.close .open-close-btn img {
+  margin-left: 10px;
+}
+
+.Sidebar .open-close-btn button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 60px;
+  background: #0d1015;
+  border: none;
+  cursor: pointer;
+}
+
+.Sidebar .open-close-btn button img {
+  width: 20px;
+}
+
+.Sidebar .logout-container button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}

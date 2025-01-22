@@ -1,0 +1,26 @@
+.InputFieldContainer {
+  color: #bbb;
+  font-family: Inter;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.InputFieldContainer input {
+  width: 100%;
+  background-color: transparent;
+  border-radius: 11px;
+  border: 1px solid #fff;
+  outline: none;
+  box-sizing: border-box;
+  padding: 13px 20px;
+
+  color: #bbb;
+
+  font-family: Inter;
+  font-size: 27px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}

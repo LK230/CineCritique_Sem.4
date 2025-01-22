@@ -1,0 +1,81 @@
+.RatingContainer {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  font-size: 25px;
+  color: #f4f4f4;
+  margin: 20px;
+  width: 100%;
+}
+
+.RatingContainer h2 {
+  margin-bottom: 13px;
+}
+
+.RatingContainer button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.RatingContainer button img {
+  width: 2rem;
+  height: 2rem;
+}
+
+.RatingContainer button:hover {
+  transform: scale(1.2);
+}
+
+.RatingContainer .InputContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.RatingContainer .CommentContainer {
+  background-color: transparent;
+  border: 1px solid #f4f4f4;
+  display: flex;
+  border-radius: 18px;
+  width: 93%;
+  height: 160px;
+  padding: 15px;
+  margin-top: 13px;
+}
+
+.RatingContainer .CommentContainer textarea {
+  background-color: transparent;
+  color: #bbbbbb;
+  border: none;
+  width: 100%;
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  resize: none;
+  outline: none;
+}
+
+.RatingContainer .CommentContainer textarea:focus {
+  border: none;
+  cursor: default;
+}
+
+.RatingContainer .CharacterCountContainer {
+  color: #f4f4f4;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  margin-top: 5px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.RatingContainer .ButtonComponent {
+  margin-right: -17px;
+  margin-top: 11px;
+}
+
+@media (max-width: 900px) {
+  .RatingContainer {
+    margin: 0;
+    font-size: 20px;
+  }
+}

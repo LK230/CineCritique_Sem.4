@@ -1,0 +1,293 @@
+.MovieContainer {
+  color: #f4f4f4;
+  padding: 30px 0;
+  background: linear-gradient(
+    90deg,
+    #00050d,
+    rgba(0, 5, 13, 0.991) 6.67%,
+    rgba(0, 5, 13, 0.964) 13.33%,
+    rgba(0, 5, 13, 0.918) 20%,
+    rgba(0, 5, 13, 0.853) 26.67%,
+    rgba(0, 5, 13, 0.768) 33.33%,
+    rgba(0, 5, 13, 0.668) 40%,
+    rgba(0, 5, 13, 0.557) 46.67%,
+    rgba(0, 5, 13, 0.443) 53.33%,
+    rgba(0, 5, 13, 0.332) 60%,
+    rgba(0, 5, 13, 0.232) 66.67%,
+    rgba(0, 5, 13, 0.147) 73.33%,
+    rgba(0, 5, 13, 0.082) 80%,
+    rgba(0, 5, 13, 0.036) 86.67%,
+    rgba(0, 5, 13, 0.009) 93.33%,
+    rgba(0, 5, 13, 0)
+  );
+
+  width: 100%;
+  height: 28rem;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: 0% 30%;
+  box-shadow: inset 0px -4px 39px 24px #0c1014;
+}
+
+.MovieContainer .content-container {
+  margin: 380px 0 0 0;
+}
+
+.MovieContainer .info-content-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.MovieContainer .info-content-container .plot {
+  width: 56%;
+  padding: 0 30px 0 0;
+}
+
+.MovieContainer .img-view-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 30px 0 45px;
+}
+
+.MovieContainer .backdrop-container {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  gap: 10px;
+  width: 735px;
+}
+
+.MovieContainer .backdrop-container::-webkit-scrollbar {
+  display: none;
+}
+
+.MovieContainer .backdrop-card {
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+}
+
+.MovieContainer .arrow {
+  margin: 10px;
+  background: none;
+  border: none;
+  height: 45px;
+  cursor: pointer;
+}
+
+.MovieContainer .play-container {
+  display: flex;
+  align-items: center;
+  margin: 0 50px;
+}
+
+.MovieContainer .play-container .right-side {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.MovieContainer .img-container img {
+  width: 100%;
+  height: 24rem;
+  object-fit: cover;
+  object-position: 0% 12%;
+}
+
+.MovieContainer .play-icon {
+  border: none;
+  cursor: pointer;
+  width: 90px;
+  height: 50px;
+  background-color: #f00;
+  box-shadow: 0px 0px 6px 3px #f00;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 45px;
+}
+
+.MovieContainer .play-icon svg {
+  color: white;
+  width: 20px;
+  height: 20px;
+  margin-left: 4px;
+}
+
+.MovieContainer .title-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.MovieContainer .text-container {
+  margin: 20px 50px;
+}
+
+.MovieContainer a {
+  text-decoration: none;
+}
+
+.MovieContainer a p {
+  color: white;
+}
+
+.MovieContainer .tags-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.MovieContainer .review-container {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  align-items: baseline;
+  gap: 25px;
+}
+
+.MovieContainer .review-container .RaitingComponentContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin: 0 20px;
+}
+
+.MovieContainer h1 {
+  color: #f4f4f4;
+  flex: 1 0 0;
+  margin: 0;
+  font-family: Inter, sans-serif;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+
+.MovieContainer p {
+  color: #d0d0d0;
+
+  font-family: Inter, sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+}
+
+.MovieContainer .ReviewsContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin: 0 20px;
+}
+
+.MovieContainer .ReviewsContainer h3 {
+  color: #848484;
+}
+
+.MovieContainer .show-rate-content {
+  display: flex;
+  align-items: center;
+  margin: 0 50px;
+}
+
+.MovieContainer .show-rate-content p {
+  font-size: 19px;
+}
+
+.MovieContainer tr {
+  height: 6vh;
+}
+.MovieContainer th {
+  vertical-align: top;
+}
+
+.MovieContainer td {
+  vertical-align: top;
+}
+
+.MovieContainer ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.MovieContainer li {
+  margin: 0 0 10px 0;
+}
+.MovieContainer td p {
+  margin: 0;
+}
+.MovieContainer table tr th p {
+  width: 200px;
+  text-align: left;
+  color: #848484;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 900px) {
+  .MovieContainer .play-container {
+    display: flex;
+    align-items: flex-start;
+    margin: 0 20px;
+    flex-direction: column;
+  }
+
+  .MovieContainer .play-container .right-side {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 15px 0;
+  }
+  .MovieContainer {
+    height: 250px;
+    padding: 50px 30px;
+  }
+
+  .MovieContainer .content-container {
+    margin: 200px 0 0 0;
+  }
+
+  .MovieContainer .show-rate-content {
+    margin: 0 20px;
+  }
+
+  .MovieContainer .text-container {
+    margin: 10px 20px;
+  }
+
+  .MovieContainer .info-content-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .MovieContainer .info-content-container .plot {
+    width: 100%;
+    padding: 0;
+  }
+
+  .MovieContainer .review-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+    width: 100%;
+  }
+
+  .MovieContainer .review-container .RaitingComponentContainer {
+    width: 90%;
+  }
+
+  .MovieContainer .ReviewsContainer {
+    width: 90%;
+  }
+}

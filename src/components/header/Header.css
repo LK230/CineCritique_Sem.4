@@ -1,0 +1,76 @@
+.Header {
+  display: flex;
+  padding: 10px 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  z-index: 10;
+  background-color: #0d1015;
+  align-items: center;
+  width: 100%;
+}
+
+.Header .header-container {
+  display: flex;
+  justify-content: space-between;
+  width: 91%;
+}
+
+.Header .header-logo img {
+  height: 25px;
+}
+
+.Header .burger-menu-icon {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.Header .header-nav {
+  position: absolute;
+  top: 45px;
+  left: 0;
+  width: 100%;
+  background-color: #0d1015;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: max-height 0.3s ease-in-out;
+  overflow: hidden;
+  z-index: 9;
+}
+
+.Header .header-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.Header .header-nav ul li {
+  padding: 10px 20px;
+  border-bottom: 1px solid #2d2c36;
+}
+
+.Header .header-nav ul li a,
+.header-nav ul li button {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  color: #f4f4f4;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.Header .header-nav ul li button {
+  padding: 0;
+}
+
+.Header .header-nav ul li a:hover,
+.header-nav ul li button:hover {
+  background-color: #f0f0f0;
+}
+
+.Header .header-nav ul li a span,
+.header-nav ul li button span {
+  margin-left: 10px;
+}

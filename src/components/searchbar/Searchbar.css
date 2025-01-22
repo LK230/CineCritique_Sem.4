@@ -1,0 +1,85 @@
+.SearchbarContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.SearchbarContainer .Searchbar {
+  background-color: transparent;
+  border: 1px solid #f4f4f4;
+  display: flex;
+  align-items: center;
+  border-radius: 21px;
+  width: 87%;
+  padding: 10px;
+  position: relative;
+}
+
+.SearchbarContainer .Searchbar input {
+  background-color: transparent;
+  color: #f4f4f4;
+  font-family: Arial, Helvetica, sans-serif;
+  border: none;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 200;
+  line-height: 33.89px;
+  margin-left: 30px;
+  width: 87%;
+}
+
+.SearchbarContainer .Searchbar #search-icon {
+  color: #f4f4f4;
+  width: 25px;
+  height: 25px;
+  margin-left: 23px;
+  cursor: pointer;
+}
+
+.SearchbarContainer input:focus-visible {
+  outline: none;
+  cursor: default;
+}
+
+.SearchbarContainer .suggestions {
+  position: absolute;
+  top: 86px;
+  background: #262630;
+  width: 66%;
+  max-height: 350px;
+  overflow-y: auto;
+  border-radius: 10px;
+}
+
+.SearchbarContainer .suggestion-item {
+  display: flex;
+  display: flex;
+  align-items: center;
+}
+
+.SearchbarContainer .suggestion-item a {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  color: #f4f4f4;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.SearchbarContainer .suggestion-item img {
+  width: 35px;
+  height: 35px;
+  margin-right: 10px;
+}
+
+.SearchbarContainer .suggestion-item .favoriteButton {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: #f4f4f4;
+  cursor: pointer;
+}
+
+.SearchbarContainer .suggestion-item:hover {
+  background-color: black;
+}

@@ -1,0 +1,150 @@
+.LoginContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+}
+
+.LoginContainer .tabs {
+  display: flex;
+  justify-content: center;
+  margin: 70px 0 40px 0;
+}
+
+.LoginContainer .tab {
+  font-family: Inter, sans-serif;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  color: #acacac;
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+.LoginContainer .tab.active {
+  color: #fff;
+}
+
+.LoginContainer .content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 45vh;
+}
+
+.LoginContainer .content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.LoginContainer .header-container {
+  margin: 0 0 46px 0;
+}
+
+.LoginContainer .form-container {
+  border: 1px solid #fff;
+  border-radius: 23px;
+  box-shadow: 4px 6px 3px 0px rgba(34, 34, 34, 0.25);
+  padding: 20px;
+  width: 550px;
+  height: 70vh;
+}
+
+.LoginContainer .form-content {
+  margin: 0 35px;
+}
+
+.LoginContainer .header {
+  color: #fff;
+  font-family: Inter, sans-serif;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.LoginContainer .form-group {
+  margin-bottom: 40px;
+}
+
+.LoginContainer .name-fields {
+  display: flex;
+  justify-content: space-between;
+  gap: 13px;
+}
+
+.LoginContainer .input-field {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+}
+
+.LoginContainer .name-fields .input-field {
+  width: 48%;
+}
+
+.LoginContainer .form-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.LoginContainer .form-button a {
+  color: #b0b0b0;
+  margin: 0;
+  left: 10px;
+  font-family: Inter;
+  font-size: 1rem;
+  line-height: 32.68px;
+}
+
+@media (max-width: 500px) {
+  .LoginContainer .form-container {
+    border: none;
+    border-top: 1px solid #fff;
+    border-radius: 0;
+    padding: 50px 10px;
+  }
+
+  .LoginContainer .tabs {
+    margin: 30px 0 20px 0;
+  }
+
+  .LoginContainer .form-content {
+    margin: 0;
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .LoginContainer .header {
+    font-size: 24px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .LoginContainer .content-container {
+    height: 30vh;
+  }
+
+  .LoginContainer .tab {
+    font-size: 19px;
+  }
+
+  .LoginContainer .form-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column-reverse;
+  }
+}
