@@ -14,6 +14,7 @@ export class UserService {
   async getUserMe() {
     try {
       const token = await KeycloakService.getToken(); // Gets the Keycloak token for the current user
+      console.log(token)
       return token;
     } catch (error) {
       console.error("Error getting UserMe:", error); // Logs an error if token retrieval fails

@@ -1,7 +1,7 @@
 
 // Keycloak parameters
 const kc_params = {
-    URL:  'http://localhost:8080',
+    URL:  'https://cinecritique.mi.hdm-stuttgart.de/auth',
     Realm: 'movie-app',
     Client:  'movie-app-client-react',
 }

@@ -18,24 +18,25 @@ class KeycloakService {
     this.keycloak = KeycloakService.keycloakInstance;
   }
 
-  // Initializes Keycloak only once and sets the callback upon successful authentication
   initKeycloak(onAuthenticatedCallback) {
     if (!KeycloakService.isInitialized) {
       this.keycloak
         .init({
-          onLoad: "login-required", // Ensures login is required on load
-          checkLoginIframe: false, // Disables iframe login check
+          onLoad: "check-sso", // Prüft nur, ob der Nutzer bereits eingeloggt ist
+          checkLoginIframe: false, // Deaktiviert das Iframe-Login-Check
         })
         .then((authenticated) => {
-          KeycloakService.isInitialized = true; // Marks Keycloak as initialized
+          KeycloakService.isInitialized = true; // Markiere Keycloak als initialisiert
           if (authenticated) {
-            onAuthenticatedCallback(); // Calls the callback function if authenticated
+            onAuthenticatedCallback(); // Callback ausführen, wenn authentifiziert
           } else {
-            this.login(); // Redirects to login if not authenticated
+            console.log("User is not authenticated. Proceeding without login.");
+            onAuthenticatedCallback(); // Trotzdem die App initialisieren
           }
         })
         .catch((error) => {
           console.error("Failed to initialize Keycloak:", error);
+          onAuthenticatedCallback(); // App initialisieren, auch wenn ein Fehler auftritt
         });
     }
   }
@@ -49,14 +50,23 @@ class KeycloakService {
     return "User is not authenticated";
   }
 
-  // Redirects to the Keycloak login page
-  login() {
-    this.keycloak.login();
-  }
+    login = (redirectUri = "/react") => {
+      if (!this.keycloak) {
+        console.error("Keycloak ist nicht initialisiert. Bitte initKeycloak aufrufen.");
+        return;
+      }
+    
+      this.keycloak.login({
+        //redirectUri: `${window.location.origin}${redirectUri}`,
+        redirectUri: "http://localhost:3000/react",
+      });
+    };
 
   // Logs the user out of Keycloak
-  logout() {
-    this.keycloak.logout();
+  logout(redirectUri = "/react") {
+    this.keycloak.logout({
+      redirectUri: "http://localhost:3000/react",
+    });
   }
 
   // Checks if the user is currently authenticated

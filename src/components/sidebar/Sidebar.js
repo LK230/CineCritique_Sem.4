@@ -33,10 +33,6 @@ export default function Sidebar({ showSidebar, setShowSidebar }) {
     return () => window.removeEventListener("resize", handleResize);
   }, [setShowSidebar]);
 
-  const handleLogout = () => {
-    KeycloakService.logout(); // Keycloak logout
-    navigate("/login");
-  };
 
   return (
     <div className={`Sidebar ${showSidebar ? "open" : "close"}`}>
@@ -126,16 +122,19 @@ export default function Sidebar({ showSidebar, setShowSidebar }) {
                   <li>
                     <div>
                       {isAuthenticated ? (
-                        <button onClick={handleLogout} className="link-btn">
-                          <GrLogout />
-                          <p>Abmelden</p>
-                        </button>
-                      ) : (
-                        <Link to="/login" className="link-btn">
-                          <GrLogin />
-                          <p>Anmelden</p>
-                        </Link>
-                      )}
+                            <button onClick={() => KeycloakService.logout("/")} className="link-btn">
+                              <GrLogout />
+                              <p>Abmelden</p>
+                            </button>
+                          ) : (
+                            <button
+                              onClick={() => KeycloakService.login("/")}
+                              className="link-btn"
+                            >
+                              <GrLogin />
+                              <p>Anmelden</p>
+                            </button>
+                          )}
                     </div>
                   </li>
                 </ul>
@@ -203,13 +202,18 @@ export default function Sidebar({ showSidebar, setShowSidebar }) {
                   <li>
                     <div>
                       {isAuthenticated ? (
-                        <button onClick={handleLogout} className="link-btn">
+                        <button onClick={() => KeycloakService.logout("/")} className="link-btn">
                           <GrLogout />
+                          <p>Abmelden</p>
                         </button>
                       ) : (
-                        <Link to="/login" className="link-btn">
+                        <button
+                          onClick={() => KeycloakService.login("/")} // Login aufrufen, direkt zur Startseite leiten
+                          className="link-btn"
+                        >
                           <GrLogin />
-                        </Link>
+                          <p>Anmelden</p>
+                        </button>
                       )}
                     </div>
                   </li>

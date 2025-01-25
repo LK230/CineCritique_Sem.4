@@ -20,15 +20,13 @@ const LoginSignup = () => {
   useEffect(() => {
     KeycloakService.initKeycloak(() => {
       if (KeycloakService.isAuthenticated()) {
-        // If the user is authenticated, navigate directly to the homepage
-        navigate("/");
+        navigate("/"); // Nach dem Login zur Startseite weiterleiten
       } else {
-        // If not authenticated, redirect to Keycloak login page
-        KeycloakService.login();
+        KeycloakService.login("/"); // Login-Seite aufrufen
       }
-      setIsLoading(false); // Set loading state to false once initialization completes
+      setIsLoading(false);
     });
-  }, [navigate]); // Add `navigate` as a dependency
+  }, [navigate]);
 
   // Function to handle user logout
   const handleLogout = () => {
