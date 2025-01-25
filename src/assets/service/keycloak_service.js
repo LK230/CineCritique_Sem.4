@@ -58,14 +58,14 @@ class KeycloakService {
     
       this.keycloak.login({
         //redirectUri: `${window.location.origin}${redirectUri}`,
-        redirectUri: "http://localhost:3000/react",
+        redirectUri: "https://cinecritique.mi.hdm-stuttgart.de/react",
       });
     };
 
   // Logs the user out of Keycloak
   logout(redirectUri = "/react") {
     this.keycloak.logout({
-      redirectUri: "http://localhost:3000/react",
+      redirectUri: "https://cinecritique.mi.hdm-stuttgart.de/react",
     });
   }
 
