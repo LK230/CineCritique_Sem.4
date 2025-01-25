@@ -17,7 +17,7 @@ COPY . ./
 RUN npm run build
 
 # Exponiere den Port, auf dem die App läuft
-EXPOSE 3000
+EXPOSE 3030
 
 # Startet die Anwendung
 CMD ["npm", "start"]

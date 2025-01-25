@@ -3,7 +3,7 @@ import api from "../api/axiosConfig";
 // Retrieves a list of all available movies.
 export async function getMoviesEndpoint() {
   try {
-    const response = await api.get("/movies/paginated");
+    const response = await api.get("/movies");
     return response.data;
   } catch (error) {
     console.error("Error fetching movies:", error);
@@ -25,7 +25,7 @@ export async function getMovieEndpoint(imdbId) {
 // Retrieves a list of the best-rated movies.
 export async function getBestRatedMoviesEndpoint() {
   try {
-    const response = await api.get("/movies/bestrated/paginated");
+    const response = await api.get("/movies/bestrated");
     return response.data;
   } catch (error) {
     console.error("Error fetching movies:", error);

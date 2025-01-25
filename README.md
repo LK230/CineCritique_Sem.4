@@ -8,7 +8,7 @@ Führen Sie die folgenden Schritte aus, um das Projekt zu installieren und zu st
 
 1. Öffnen Sie ein Terminal und navigieren Sie in das Verzeichnis des Frontend-Projekts:
    ```bash
-   cd Frontend/my-app
+   cd /my-app
 
 2. Installieren Sie die notwendigen Abhängigkeiten:
    ```bash
