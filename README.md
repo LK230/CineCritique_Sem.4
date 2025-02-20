@@ -23,6 +23,8 @@ Wenn das Projekt lokal laufen soll, muss man in der ``auth.dart`` die ``redirect
 1. Navigiere in Projektverzeichnis (``.../cinecritique-frontend/flutter_app``)
 2. Führe ``flutter run -d chrome --web-port=54841`` aus, wähle Gerät aus (Chrome Desktop für Webapp) falls danach gefragt wird
 
+- Als target kann auch ein Android oder iOS Emulator (nur auf macOS verfügbar) ausgewählt werden, falls dies Fehlermeldungen wie zum Beispiel ``Command CodeSign failed with a nonzero exit code`` verursacht, ist es empfehlenswert das Projekt in einen Ordner zu verschieben, der nicht von iCload synchronisiert wird, oder ähnlichen Cloud tools. Generell ist die Desktop Implementation besser und stabiler
+
 ## Versionslog
 
 ### Version 0.1.0 (Initial Release)
