@@ -10,7 +10,7 @@ Das Flutter Frontend für CineCritique
 2. Versionslog
 
 ## Starten der App und Voraussetzungen
-Empfehlung: [Live Version im Web](https://cinecritique.mi.hdm-stuttgart.de/) benutzen, lokal kann Keycloak Probleme machen. Beispielnutzer für die Web-Version: `johndoe` mit Passwort `123`
+Empfehlung: [Live Version im Web](https://cinecritique.mi.hdm-stuttgart.de/) benutzen, lokal kann Keycloak Probleme machen. Beispielnutzer für die Web-Version: `johndoe` mit Passwort `123`. Die Webapp ist **auch für Mobilgeräte optimiert, und läuft sehr viel besser als nativ kompilierter Code**
 
 ### Voraussetzungen
 1. Lokale Flutter-Installation (inkl. Dependencies wie Chrome Webtools)
