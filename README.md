@@ -8,6 +8,7 @@ Das Flutter Frontend für CineCritique
     - Starten der App
     - Mobile App
 2. Versionslog
+3. Ausblick
 
 ## Starten der App und Voraussetzungen
 Empfehlung: [Live Version im Web](https://cinecritique.mi.hdm-stuttgart.de/) benutzen, lokal kann Keycloak Probleme machen. Beispielnutzer für die Web-Version: `johndoe` mit Passwort `123`. Die Webapp ist **auch für Mobilgeräte optimiert, und läuft sehr viel besser als nativ kompilierter Code**
