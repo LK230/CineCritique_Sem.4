@@ -101,3 +101,6 @@ Wenn das Projekt lokal laufen soll, muss man in der `auth.dart` die `redirectUri
   - Verbesserte Darstellung der Favoritenansicht mit responsiven Layouts und alphabetischer Sortierung („favorite screen responsive“, „favoritenpage responsive“, „alphabetische sotrierung der filme“).
 - **Diverse Optimierungen:**  
   - Weitere kleinere UI-Anpassungen und Bugfixes zur Verbesserung der Benutzererfahrung.
+
+## Ausblick
+- Das Projekt hat noch viel Potenzial für weitere Entwicklung. Dabei könnte man insbesondere in den Bereichen Logging und Testing noch einiges tun, da diese bisher quasi gar nicht implementiert sind. Zudem muss derzeit alle drei Minuten ein neues Keycloak-Token abgerufen werden, da das alte abläuft. Dies kann jedoch über bereits existierende API-Endpunkte im Backend automatisiert werden. Auch im Bereich der Barrierefreiheit könnte noch Arbeit investiert werden, um den Industriestandard zu erreichen, wobei wir mittlerweile bereits ein gutes Niveau ohne größere Auffälligkeiten erreicht haben. Letztendlich gibt es noch einige kleinere Inkonsistenzen bei der Implementierung von Klassen und Methoden. Es wäre sinnvoll, mehr Logik in eigene Klassen auszulagern, um den Code übersichtlicher zu gestalten.
